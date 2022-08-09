@@ -20,14 +20,13 @@ class Point {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Point)) return false;
+    public boolean equals(Point point) {
+        if (this == point) return true;
+        if (!(point instanceof Point)) return false;
 
-        Point point = (Point) o;
+        double delta = 0.000001D;
 
-        if (Double.compare(point.x, x) != 0) return false;
-        return Double.compare(point.y, y) == 0;
+        return ((getX() - point.getX()) <= delta) && (delta >= (getY() - point.getY()));
     }
 
     @Override

@@ -6,27 +6,14 @@ class Segment {
     private Point start;
     private Point end;
 
-    public Segment(Point start, Point end)  throws IllegalArgumentException, NullPointerException, RuntimeException {
+    public Segment(Point start, Point end)   {
 
 
         this.start = start;
         this.end = end;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Segment)) return false;
-        Segment segment = (Segment) o;
-        double delta = 0.000001D;
 
-        return  && start.getY() - end.getY();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(start, end);
-    }
 
     double length() {
         double x = Math.pow((end.getX() - start.getX()), 2);
