@@ -6,7 +6,6 @@ public class Main {
 
 
         Segment segment = new Segment(new Point(2, 0), new Point(0, 2));
-      /*  Point midpoint = segment.middle();*/
 
         System.out.println(segment.middle());
     

@@ -1,18 +1,17 @@
 package com.epam.rd.autotasks.segments;
 
-import java.util.Objects;
-
 class Segment {
     private Point start;
     private Point end;
 
-    public Segment(Point start, Point end)   {
+    public Segment(Point start, Point end) {
+        if (start.equals(end) || (start == null || (end == null))) {
+           throw new RuntimeException();
+        }
+            this.start = start;
+            this.end = end;
 
-
-        this.start = start;
-        this.end = end;
     }
-
 
 
     double length() {
@@ -47,12 +46,9 @@ class Segment {
         double t = a1 / a2;
         double u = a3 / a2;
 
-        if((t >=0 && t <=1) && (u >= 0 && u <=1))
-
-        {
+        if ((t >= 0 && t <= 1) && (u >= 0 && u <= 1)) {
             return new Point(x1 + t * (x2 - x1), y1 + t * (y2 - y1));
-        }
-        else {
+        } else {
             return null;
         }
     }
